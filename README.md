@@ -64,6 +64,8 @@ So these fixes are only important for Pineapple Forest release of 351 ELEC.
 
 ### Install Instructions
 
+Choose one of the below two options. Optimum saves more battery, but some heavvy emulators may not perform the best. Maximum prioritzes Performance over battery life.
+
 #### Maximum Clock & Base Clock
 
 - Create a directory `overrides` in `/storage/roms/bios` on your RG351p device.

@@ -13,7 +13,9 @@ Just delete the files you copied to your device, from this mod, Reboot your devi
 ----------------------------------------------------------------------------------------------------------------
 ## Mod 1: Optimum Retroarch Clock Optimization
 
-Retroarch configuration for optimized clocks for various emulators. Many of the simpler emulators like GB, GBC etc can be run perfectly well for majority of the games on much lower clocks than what Retroarch forces them on.
+Retroarch configuration for optimized clocks for various emulators. 
+
+Many of the simpler emulators like GB, GBC etc can be run perfectly well for majority of the games on much lower clocks than what Retroarch forces them on.
 
 ### Install Instructions
 
@@ -39,7 +41,11 @@ Copy all the directories from `retroarch-optimizations` to `/storage/roms/gameda
 
 - Sets retroarch to scale in a more optimum way from base clock to max clock for CPU, instead of always running at max clock.
 
-- Sets each emulator and game individually to run at the clock speed required for it. The files are fore cores that i use for various systems, if you use a different core, you can create a similar config for that core or game by trying and testing.
+- Sets each emulator and game individually to run at the clock speed required for it. 
+
+The files in `retroarch-optimizations` are for cores that i personally use for various systems and the games i play. I will add more in future here, as required.
+
+if you use different cores, you can create a similar config for that core or game and then test performance by playing.
 
 ### CAUTION:
 
@@ -50,7 +56,7 @@ For the mod to work, you need to do changes in both the default Retroarch config
 
 In it's Pineapple Forest release 351 Elec's clock management code is being overridden by Retroarch's cpu power management. This causes the cpu clock to not go down even after the emulator's have been closed. 
 
-Files provided here can be used to achieve these improved clock states.
+Files provided here can be used to achieve improved clock states.
 
 351 ELEC devs are now aware of this problem and will most likely fix this in their next release. ( I hope so, it may not be priority for them. )
 
@@ -80,7 +86,7 @@ So these fixes are only important for Pineapple Forest release of 351 ELEC.
 
 - Depending on which Option you applied in above instructions, following will happen.
 	- **Maximum Clock & Base Clock**: On setting _"enable max performance"_ to Yes/On in ES Menu. Device will permanently run at Max Clock for CPU (1.3GHz) & GPU in that emulator/game.
-	- **Optimum Clock & Base Clock**: On setting _"enable max performance"_ in Yes/On in ES Menu. Device will scale from min (1 GHz) to Max Clock (1.3 GHz) for CPU & GPU as per the load, in that emulator/game.
+	- **Optimum Clock & Base Clock**: On setting _"enable max performance"_ to Yes/On in ES Menu. Device will scale from min (1 GHz) to Max Clock (1.3 GHz) for CPU & GPU as per the load, in that emulator/game.
 
 In my personal testing for PPSSPP, on game Hot Shot Tennis, Optimum Clock option works fine, you don't need to force CPU & GPU to always run at max clocks. Battery will thank you.
 

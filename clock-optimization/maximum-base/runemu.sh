@@ -483,6 +483,9 @@ clear_screen
 $VERBOSE && log "executing game: ${ROMNAME}"
 $VERBOSE && log "script to execute: ${RUNTHIS}"
 # If the rom is a shell script just execute it, useful for DOSBOX and ScummVM scan scripts
+
+BATT_CAP_AT_START=$(cat /sys/class/power_supply/battery/capacity)
+START_TIME=`date +%s`
 if [[ "${ROMNAME}" == *".sh" ]]; then
 	$VERBOSE && log "Executing shell script ${ROMNAME}"
 	"${ROMNAME}" &>>${OUTPUT_LOG}
@@ -492,6 +495,20 @@ else
 	eval ${RUNTHIS} &>>${OUTPUT_LOG}
 	ret_error=$?
 fi
+END_TIME=`date +%s`
+BATT_CAP_AT_END=$(cat /sys/class/power_supply/battery/capacity)
+
+# Calculate Session Runtime
+RUN_TIME=$((END_TIME-START_TIME))
+HOURS=$((RUN_TIME / 3600)); 
+MINUTES=$(( (RUN_TIME % 3600) / 60 )); 
+SECONDS=$(( (RUN_TIME % 3600) % 60 ));
+
+# Calculate Battery Discharge
+BATTERY_DISCHARGE=$((BATT_CAP_AT_START-BATT_CAP_AT_END))
+
+mkdir -p /storage/roms/bios/overrides
+echo "$(date) | Runtime: $HOURS:$MINUTES:$SECONDS (hh:mm:ss) | Battery: $BATT_CAP_AT_START:$BATT_CAP_AT_END:$BATTERY_DISCHARGE (start:end:net discharge)" >> /storage/roms/bios/overrides/battery_runtime.log
 
 clear_screen
 

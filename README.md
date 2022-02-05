@@ -90,13 +90,14 @@ Choose one of the below two options. Optimum saves more battery, but some heavvy
 	- **Maximum Clock & Base Clock**: On setting _"enable max performance"_ to Yes/On in ES Menu. Device will permanently run at Max Clock for CPU (1.3GHz) & GPU in that emulator/game.
 	- **Optimum Clock & Base Clock**: On setting _"enable max performance"_ to Yes/On in ES Menu. Device will scale from min (1 GHz) to Max Clock (1.3 GHz) for CPU & GPU as per the load, in that emulator/game.
 
-### Bonus
-_**Your play time for emulators and the battery discharge info for play session is available in `/storage/roms/bios/overrides/battery_runtime.log**_
-Use it to identify how is battery life for your device.
-
 In my personal testing for PPSSPP, on game Hot Shot Tennis, Optimum Clock option works fine, you don't need to force CPU & GPU to always run at max clocks. Battery will thank you.
 
 All of This is good for battery and tempratures. There is no need for running system at a higher clock if it is not required. It is just a waste of resources.
+
+### Bonus
+_**Your personal gameplay tracking log is available at**_ `/storage/roms/bios/overrides/gameplay.log` _**It records date played on, game platform, game name, play time and battery stats**_
+
+Use it to track how many games you have played , for how long and how has the battery life been on your device.
 
 ### CAUTION:
 

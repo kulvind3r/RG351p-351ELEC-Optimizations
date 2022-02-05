@@ -508,8 +508,8 @@ SECONDS=$(( (RUN_TIME % 3600) % 60 ));
 BATTERY_DISCHARGE=$((BATT_CAP_AT_START-BATT_CAP_AT_END))
 
 mkdir -p /storage/roms/bios/overrides
-echo "$(date) | Runtime: $HOURS:$MINUTES:$SECONDS (hh:mm:ss) | Battery: $BATT_CAP_AT_START:$BATT_CAP_AT_END:$BATTERY_DISCHARGE (start:end:net discharge)" >> /storage/roms/bios/overrides/battery_runtime.log
-
+GAME=$(basename "$ROMNAME" |  cut -d '(' -f1)
+echo "$(date) | ${PLATFORM} | ${GAME} | Runtime: $HOURS:$MINUTES:$SECONDS (hh:mm:ss) | Battery: $BATT_CAP_AT_START%:$BATT_CAP_AT_END%:$BATTERY_DISCHARGE% (start:end:discharge)" >> /storage/roms/bios/overrides/gameplay.log
 clear_screen
 
 $VERBOSE && log "Checking errors: ${ret_error} "

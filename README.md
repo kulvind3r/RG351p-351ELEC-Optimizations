@@ -9,12 +9,46 @@ _**If you screw up something just see below instruction**_
 ## I SCREWED UP MY DEVICE, HOW DO I FIX IT?
 Just delete the files you copied to your device, from this mod, Reboot your device.
 
+
 ----------------------------------------------------------------------------------------------------------------
-## Mod 1: Better Overall Clock Management
+## Mod 1: Optimum Retroarch Clock Optimization
+
+Retroarch configuration for optimized clocks for various emulators. Many of the simpler emulators like GB, GBC etc can be run perfectly well for majority of the games on much lower clocks than what Retroarch forces them on.
+
+### Install Instructions
+
+### Default Retroarch configuration
+
+Set the below values in `/storage/roms/gamedata/retroarch/retroarch.cfg` file on your device. If any value is not present in the file you can just add it.
+
+```
+cpu_main_gov = "conservative"
+cpu_max_freq = "1296000"
+cpu_menu_gov = "powersave"
+cpu_min_freq = "1008000"
+cpu_scaling_mode = "1"
+```
+
+### Other Emulators / Games Configuration
+
+Copy all the directories from `retroarch-optimizations` to `/storage/roms/gamedata/retroarch/config` directory on your device.
+
+### Effects
+
+- Sets retroarch to run at minimum clock during menus.
+
+- Sets retroarch to scale in a more optimum way from base clock to max clock for CPU, instead of always running at max clock.
+
+- Sets each emulator and game individually to run at the clock speed required for it. The files are fore cores that i use for various systems, if you use a different core, you can create a similar config for that core or game by trying and testing.
+
+### CAUTION:
+
+For the mod to work, you need to do changes in both the default Retroarch configuration and Other Emulators. If you just do one of the two , the mod will not work.
+
+----------------------------------------------------------------------------------------------------------------
+## Mod 2: Better Overall Clock Management
 
 In it's Pineapple Forest release 351 Elec's clock management code is being overridden by Retroarch's cpu power management. This causes the cpu clock to not go down even after the emulator's have been closed. 
-
-In addition, many of the simpler emulators like GB, GBC etc can be run perfectly well for majority of the games on much lower clocks than what Retroarch forces them on.
 
 Files provided here can be used to achieve these improved clock states.
 
@@ -57,5 +91,3 @@ All of This is good for battery and tempratures. There is no need for running sy
 Since you are now optimizing clocks, for any emulator where you do not see good performance, you will have to go and set _"enable max performance"_ to Yes/On either in the _advance game options_ for that game / in the _advance system options_ for that system as a whole. 
 
 So don't come complaining here that some X system that was working amazing earlier, is not working great now. You need to use the mod correctly. Just delete the mod if you can't fix it.
-
-----------------------------------------------------------------------------------------------------------------
